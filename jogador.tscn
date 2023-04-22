@@ -3,8 +3,9 @@
 [ext_resource path="res://jogador.gd" type="Script" id=1]
 [ext_resource path="res://Jogador/Player.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 11.0
+[sub_resource type="CapsuleShape2D" id=25]
+radius = 5.0
+height = 6.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -221,12 +222,12 @@ start_node = "Parado"
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 2 )
+rotation = -1.5708
 z_index = 1
-shape = SubResource( 1 )
+shape = SubResource( 25 )
 
 [node name="Sprite" type="Sprite" parent="."]
-z_index = 1
+position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 60
 
@@ -247,4 +248,4 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 24 )
 parameters/Andando/blend_position = Vector2( -0.00402302, 0.120902 )
-parameters/Parado/blend_position = Vector2( 0.0327586, 0.465164 )
+parameters/Parado/blend_position = Vector2( 0.501724, -0.0317919 )

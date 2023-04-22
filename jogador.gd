@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var movimento = 70
+export var movimento = 80
 
 func _physics_process(delta):
 	var velocidade = Vector2.ZERO
