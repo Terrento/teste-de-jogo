@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://jogador.gd" type="Script" id=1]
+[ext_resource path="res://Jogador/jogador.gd" type="Script" id=1]
 [ext_resource path="res://Jogador/Player.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=25]
@@ -247,5 +247,5 @@ tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 24 )
-parameters/Andando/blend_position = Vector2( -0.00402302, 0.120902 )
+parameters/Andando/blend_position = Vector2( -0.00172412, 0.00289011 )
 parameters/Parado/blend_position = Vector2( 0.501724, -0.0317919 )
