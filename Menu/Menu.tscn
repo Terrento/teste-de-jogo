@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Mundo/Mundo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu/Fontes/joystix monospace.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Menu/Botões/CréditosBotão.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/Botões/SairBotão.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/Botões/ComecarBotão.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+JogoCena = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_top = 20.0
+margin_right = 320.0
+margin_bottom = 65.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 320.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 6 )
+text = "Jogo sei lá"
+align = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_left = 120.0
+margin_top = 117.0
+margin_right = 200.0
+margin_bottom = 180.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2"]
+margin_right = 80.0
+margin_bottom = 64.0
+custom_constants/separation = 5
+
+[node name="Comecar" parent="MarginContainer2/VBoxContainer2" instance=ExtResource( 6 )]
+
+[node name="Creditos" parent="MarginContainer2/VBoxContainer2" instance=ExtResource( 4 )]
+margin_top = 23.0
+margin_bottom = 41.0
+
+[node name="Sair" parent="MarginContainer2/VBoxContainer2" instance=ExtResource( 5 )]
+margin_top = 46.0
+margin_bottom = 64.0
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer2/Comecar" to="." method="_on_Comecar_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer2/Creditos" to="." method="_on_Creditos_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer2/Sair" to="." method="_on_Sair_pressed"]

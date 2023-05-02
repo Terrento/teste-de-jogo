@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/Fontes/joystix_10.tres" type="DynamicFont" id=1]
+
+[node name="MenuBotão" type="Button"]
+margin_right = 80.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 1 )
+text = "Começar"
