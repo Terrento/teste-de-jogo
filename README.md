@@ -2,8 +2,8 @@
 
 > Status: Em andamento
 
-Fiz um menuzinho e expandi um pouco o mapa. Coloquei uma câmera também.
+Coloquei gramas que interagem com o ataque do personagem. Adicionei uma animação de ataque.
 
-Não coloquei as decorações ainda. Vou tentar lembrar disso mais os inimigos
+Fiz o básico dos morcegos mas por enquanto não fazem nada. Vejo se resolvo isso na próxima.
 
 Estarei usando o Godot versão 3.5.1 por enquanto mas pretendo atualizar para a versão 4.0 quando possível. Provavelmente Setembro.
