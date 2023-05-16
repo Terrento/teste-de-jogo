@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var movimento = 80
+var direcao = Vector2.ZERO
 
 enum { #enumera variáveis
 	MOV,
@@ -8,6 +9,7 @@ enum { #enumera variáveis
 	ATQ
 }
 var estado = MOV
+onready var espadaHitbox = $HitboxPivo/EspadaHitbox
 
 func _ready():
 	$AnimationTree.active = true
@@ -42,6 +44,8 @@ func estado_mov(delta):
 	if velocidade == Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("Parado") #Parado
 	else:
+		direcao = velocidade
+		espadaHitbox.repulsao = direcao
 		$AnimationTree.get("parameters/playback").travel("Andando") #Mover para animação de andar
 		$AnimationTree.set("parameters/Parado/blend_position", velocidade) #Congelar a direção de movimento
 		$AnimationTree.set("parameters/Andando/blend_position", velocidade) #Animação de andar para outros lados
