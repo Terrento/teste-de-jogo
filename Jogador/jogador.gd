@@ -10,6 +10,8 @@ enum { #enumera variáveis
 }
 var estado = MOV
 onready var espadaHitbox = $HitboxPivo/EspadaHitbox
+onready var stats = $JogadorEstatisticas
+onready var hurtbox = $Hurtbox
 
 func _ready():
 	$AnimationTree.active = true
@@ -61,3 +63,11 @@ func estado_atq(delta):
 
 func ataque_terminado():
 	estado = MOV
+
+func _on_Hurtbox_area_entered(area):
+	stats.vida -= 1
+	hurtbox.comecar_invencivel(0.5)
+	hurtbox.criar_efeito_acerto()
+
+func _on_JogadorEstatisticas_vida_zero():
+	queue_free()
